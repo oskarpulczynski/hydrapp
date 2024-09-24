@@ -9,8 +9,11 @@ console.log(removeButton);
 console.log(glassNumber);
 
 const addGlass = () => {
-	glassNumber = glassNumber + 1;
-	counterNumber.innerHTML = glassNumber;
+	if (glassNumber <= 98) {
+		glassNumber = glassNumber + 1;
+		counterNumber.innerHTML = glassNumber;
+	} else {
+	}
 };
 
 const removeGlass = () => {
