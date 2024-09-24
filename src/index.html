@@ -6,21 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nawadnianie</title>
   <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="/src/index.css">
   <link rel="icon" href="../favicon.ico">
   <meta property="og:title" content="Nawadnianie">
   <meta name="description" content="Aplikacja do sprawdzania swojego nawodnienia w ciągu dnia">
   <meta property="og:type" content="website">
 </head>
+
 <body class="bg-slate-800 flex justify-center items-center h-screen">
-  <main class="flex flex-col">
-    <h1 cla>Nawadnianie</h1>
-    <section>
-      <img src="images/water-glass.svg" alt="">
-      <p></p>
+  <main class="flex flex-col gap-10 mx-12 my-32 items-center">
+    <h1 class="text-6xl text-white text-center">Nawadnianie</h1>
+    <section class="relative flex justify-center items-center h-72 w-72">
+      <img class="block" src="images/water-glass.svg" alt="">
+      <div class="absolute text-9xl">0</div>
     </section>
-    <button>dodaj szklankę</button>
-    <button>usuń szklankę</button>
+    <div class="flex flex-col gap-4">
+      <button class="bg-white text-black rounded px-14 py-3">dodaj
+        szklankę</button>
+      <button class="text-red-500 rounded px-14 py-3"> usuń szklankę</button>
+    </div>
   </main>
 </body>
 
