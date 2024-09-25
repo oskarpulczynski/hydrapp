@@ -1,28 +1,32 @@
 const addButton = document.querySelector(".button__add--js");
 const removeButton = document.querySelector(".button__remove--js");
-const counterNumber = document.querySelector(".counter--js");
+const counterValue = document.querySelector(".counter--js");
 
-let glassNumber = parseInt(counterNumber.textContent);
+let glasses = 0;
 
-console.log(addButton);
-console.log(removeButton);
-console.log(glassNumber);
+const key = new Date().toISOString().slice(0, 10);
 
-const addGlass = () => {
-	if (glassNumber <= 98) {
-		glassNumber = glassNumber + 1;
-		counterNumber.innerHTML = glassNumber;
-	} else {
-	}
+if (localStorage.getItem(key)) {
+	glasses = parseInt(localStorage.getItem(key));
+}
+
+const setCounterValue = value => {
+	counterValue.innerHTML = value;
+	localStorage.setItem(key, value);
 };
 
-const removeGlass = () => {
-	if (glassNumber >= 1) {
-		glassNumber = glassNumber - 1;
-		counterNumber.innerHTML = glassNumber;
-	} else {
-	}
-};
+setCounterValue(glasses);
 
-addButton.addEventListener("click", addGlass);
-removeButton.addEventListener("click", removeGlass);
+addButton.addEventListener("click", () => {
+	if (glasses <= 98) {
+		glasses = glasses + 1;
+		setCounterValue(glasses);
+	}
+});
+
+removeButton.addEventListener("click", () => {
+	if (glasses >= 1) {
+		glasses = glasses - 1;
+		setCounterValue(glasses);
+	}
+});
